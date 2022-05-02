@@ -93,11 +93,11 @@ option_menu.grid(row=3, column=0, padx=10, pady=5)
 # Placeholder for radiobutton
 
 # Defines the function "image_change"
-image_change = True
-image_list = ["kaworu_image", "ernst_image", "satou_image", "tom_image"]
-while image_change:
-    anime_label.configure(image=random.choice(image_list))
-    time.sleep(5)
+# image_change = True
+# image_list = ["kaworu_image", "ernst_image", "satou_image", "tom_image"]
+# while image_change:
+#     anime_label.configure("image=random.choice(image_list)")
+#     time.sleep(5)
 
 # Run the main window loop
 root.mainloop()
