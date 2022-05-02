@@ -1,4 +1,7 @@
+# Imports modules
 from tkinter import *
+import time
+import random
 
 # Create a window
 root = Tk()
@@ -11,15 +14,17 @@ top_frame.grid(row=0, column=0)
 image_frame = Frame(root)
 image_frame.grid(row=1, column=0)
 
-eighty_six_frame=Frame(root)
-eighty_six_frame.grid(row=1,column=1)
+eighty_six_frame = Frame(root)
+eighty_six_frame.grid(row=1, column=1)
 
 bottom_frame = Frame(root)
 bottom_frame.grid(row=2, column=0)
 
 # Create a PhotoImage()
-kaworu_image = PhotoImage(file='kaworu.png')
-
+kaworu_image = PhotoImage(file='img/kaworu.png')
+ernst_image = PhotoImage(file='img/ernst.png')
+satou_image = PhotoImage(file='img/satou.png')
+tom_image = PhotoImage(file='img/tom.png')
 
 # Create a label with the 'title' of the app
 label_with_title = Label(top_frame, text="Welcome to the Best tkinter demonstration program!!!", justify="center")
@@ -39,10 +44,9 @@ lelouch_quote.set("The only ones who should kill, are those who are prepared to 
 lelouch_label = Label(top_frame, textvariable=lelouch_quote, wraplength=250)
 lelouch_label.grid()
 
-
 # Create a new Label using the PhotoImage and pack it into the GUI
-kaworu_label = Label(image_frame, image=kaworu_image)
-kaworu_label.grid()
+anime_label = Label(image_frame, image=kaworu_image)
+anime_label.grid()
 
 # Create a StringVar() to store text
 evangelion_waifu = StringVar()
@@ -87,6 +91,13 @@ option_menu.grid(row=3, column=0, padx=10, pady=5)
 
 
 # Placeholder for radiobutton
+
+# Defines the function "image_change"
+image_change = True
+image_list = ["kaworu_image", "ernst_image", "satou_image", "tom_image"]
+while image_change:
+    anime_label.configure(image=random.choice(image_list))
+    time.sleep(5)
 
 # Run the main window loop
 root.mainloop()
